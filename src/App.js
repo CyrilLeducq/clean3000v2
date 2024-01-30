@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, RouterProvider } from 'react-router-dom';
+import HomePage from './components/HomePage';
+import ClientCreationForm from './components/ClientCreationForm';
+import PassageForm from './components/PassageForm';
+import PassageList from './components/PassageList';
+import StartPage from './components/StartPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<StartPage />} />
+        <Route path="/accueil" element={<HomePage />} />
+        <Route path="/ajout-client" element={<ClientCreationForm />} />
+        <Route path="/creer-passage" element={<PassageForm />} />
+        <Route path="/liste-passages" element={<PassageList />} />
+      </Routes>
+    </Router>
   );
 }
 
