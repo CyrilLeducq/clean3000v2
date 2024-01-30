@@ -1,9 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const defaultClients = [
-  { id: 1, name: 'Client 1' },
-  { id: 2, name: 'Client 2' },
-  { id: 3, name: 'Client 3' }
+  { id: 1, name: 'Jardins d\'Ariana' },
+  { id: 2, name: 'Jérôme Livran' },
+  { id: 3, name: 'Archimed' },
+  { id: 4, name: 'Philippe Parguey' },
+  { id: 5, name: 'BeCom' },
 ];
 
 const clientSlice = createSlice({

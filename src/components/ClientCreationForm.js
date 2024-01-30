@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { addClient } from '../features/clients/clientsSlice';
 import Header from './Header';
 import '../stylesheet/ClientCreationForm.scss';
+import { useNavigate } from 'react-router-dom';
 
 function ClientCreationForm() {
   const [name, setName] = useState('');
@@ -10,6 +11,7 @@ function ClientCreationForm() {
 
   const clients = useSelector(state => state.clients.clientsList);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -30,6 +32,9 @@ function ClientCreationForm() {
     // afin d'avoir un id unique lors de al création j'utilise Date.now 
     setMessage('Client ajouté avec succès.');
     setName('');
+    setTimeout(() => {
+      navigate('/accueil'); 
+  }, 3000);
   };
 
   return (
@@ -48,7 +53,7 @@ function ClientCreationForm() {
           />
           <button type="submit">Ajouter</button>
         </form>
-        {message && <p>{message}</p>}
+        {message && <p className="confirmation-message">{message}</p>}
       </div>
     </div>
   );

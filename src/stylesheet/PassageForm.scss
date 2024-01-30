@@ -1,4 +1,4 @@
-.add-client-page {
+.passage-form-page {
     background-color: #3d3d33;
 }
 
@@ -35,11 +35,14 @@ label {
     text-align: left;
     margin-bottom: 10px;
 }
-input[type="text"]{
+
+input[type="date"],
+select {
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.322);
 }
 
-input[type="text"],
+input[type="date"],
+select,
 button[type="submit"] {
     width: 100%;
     padding: 10px;
@@ -47,7 +50,7 @@ button[type="submit"] {
     border-radius: 8px;
     margin-bottom: 50px;
     box-sizing: border-box;
-    
+
 
     &:focus {
         box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
@@ -64,6 +67,14 @@ button[type="submit"] {
         background-color: darkgreen;
     }
 }
+
 .confirmation-message {
     color: white;
-  }
+}
+
+.signatures {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+
+}
