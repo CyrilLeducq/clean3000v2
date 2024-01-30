@@ -1,0 +1,13 @@
+.header {
+    background-color: #3d3d33;
+    text-align: center;
+  }
+  
+  .logo {
+    margin-top: 50px;
+    width: 500px; // Taille du logo par défaut
+  
+    @media (max-width: 768px) {
+      width: 70%;
+    }
+  }

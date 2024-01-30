@@ -1,0 +1,39 @@
+.home-page {
+    background-color: #3d3d33;
+}
+
+.container {
+    text-align: center;
+    height: 100vh;
+}
+
+.button-container {
+    margin-top: 0px;
+}
+
+.client-button,
+.passage-button,
+.passage-list-button {
+    display: block;
+    width: 80%;
+    max-width: 300px;
+    margin: 100px auto;
+    padding: 20px 20px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.client-button {
+    background-color: #007bff;
+}
+
+.passage-button {
+    background-color: #28a745;
+}
+
+.passage-list-button {
+    background-color: #dc3545;
+}
