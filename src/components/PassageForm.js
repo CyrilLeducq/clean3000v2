@@ -10,7 +10,7 @@ function PassageForm() {
     const [date, setDate] = useState('');
     const [clientSignature, setClientSignature] = useState(false);
     const [technicianSignature, setTechnicianSignature] = useState(false);
-    const [observations, setObservations] = useState(''); // Nouvel état pour les observations
+    const [observations, setObservations] = useState('');
     const [message, setMessage] = useState('');
 
     const clients = useSelector((state) => state.clients.clientsList);
@@ -24,7 +24,7 @@ function PassageForm() {
             return;
         }
 
-        dispatch(addPassage({ client, date, clientSignature, technicianSignature, observations })); // Inclure les observations
+        dispatch(addPassage({ client, date, clientSignature, technicianSignature, observations }));
         setMessage('L\'avis de passage a été créé avec succès.');
         setTimeout(() => {
             navigate('/accueil');

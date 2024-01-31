@@ -56,6 +56,15 @@ button[type="submit"] {
         box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
     }
 }
+textarea{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 50px;
+    box-sizing: border-box;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.322);
+}
 
 button[type="submit"] {
     background-color: green;

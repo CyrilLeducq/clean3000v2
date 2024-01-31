@@ -15,17 +15,15 @@ function PassageList() {
                 <div className="liste">
                     <h2>Liste des avis de passage</h2>
                     <ul>
-                        {passages.map(passage => {
-                          
-                            return (
-                                <li key={passage.id}>
-                                    <Link to={`/passage/${passage.id}`}>
-                                        <div className="name">{passage.client}</div>
-                                        <div className="date">{format(new Date(passage.date), 'dd-MM-yyyy')}</div>
-                                    </Link>
-                                </li>
-                            );
-                        })}
+                        {passages.map(passage => (
+                            <li key={passage.id}>
+                                <Link to={`/passage/${passage.id}`}>
+                                    <div className="name">Client: {passage.client}</div>
+                                    <div className="details">Observations: {passage.observations}</div>
+                                    <div className="date"> Date: {format(new Date(passage.date), 'dd-MM-yyyy')}</div>
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
                 </div>
             </div>
