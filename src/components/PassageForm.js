@@ -10,9 +10,9 @@ function PassageForm() {
     const [date, setDate] = useState('');
     const [clientSignature, setClientSignature] = useState(false);
     const [technicianSignature, setTechnicianSignature] = useState(false);
-    const [confirmationMessage, setConfirmationMessage] = useState('');
+    const [observations, setObservations] = useState(''); // Nouvel état pour les observations
     const [message, setMessage] = useState('');
-    
+
     const clients = useSelector((state) => state.clients.clientsList);
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -24,10 +24,10 @@ function PassageForm() {
             return;
         }
 
-        dispatch(addPassage({ client, date, clientSignature, technicianSignature }));
+        dispatch(addPassage({ client, date, clientSignature, technicianSignature, observations })); // Inclure les observations
         setMessage('L\'avis de passage a été créé avec succès.');
         setTimeout(() => {
-            navigate('/accueil'); 
+            navigate('/accueil');
         }, 3000);
     };
 
@@ -46,6 +46,8 @@ function PassageForm() {
                     </select>
                     <label htmlFor="dateInput">Date :</label>
                     <input type="date" id="dateInput" value={date} onChange={(e) => setDate(e.target.value)} />
+                    <label htmlFor="observations">Observations :</label>
+                    <textarea id="observations" value={observations} onChange={(e) => setObservations(e.target.value)} />
                     <div className="signatures">
                         <div className="signature">
                             <label htmlFor="clientSignatureCheckbox">Signature client :</label>
@@ -56,6 +58,7 @@ function PassageForm() {
                             <input type="checkbox" id="technicianSignatureCheckbox" checked={technicianSignature} onChange={() => setTechnicianSignature(!technicianSignature)} />
                         </div>
                     </div>
+
                     <button type="submit">Valider</button>
                 </form>
                 {message && <p className="confirmation-message">{message}</p>}
